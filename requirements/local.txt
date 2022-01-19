@@ -1,0 +1,7 @@
+-r ./base.txt
+
+flake8==4.0.1  # https://github.com/PyCQA/flake8
+flake8-isort==4.1.1  # https://github.com/gforcada/flake8-isort
+
+# pytest==6.2.5  # https://github.com/pytest-dev/pytest
+pytest-flask==1.2.0  # https://github.com/pytest-dev/pytest-flask
