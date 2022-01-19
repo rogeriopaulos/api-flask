@@ -1,0 +1,1 @@
+# API em Flask que retorna a contagem de vogais a partir de uma lista de strings.
