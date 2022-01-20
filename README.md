@@ -18,7 +18,7 @@ Para rodar a aplicação localmente (no modo de desenvolvimento), siga os seguin
 
 1. Crie um ambiente virtual do Python.
 
-Para maiores informações sobre como criar, acesse esse (link)[https://docs.python.org/pt-br/3/tutorial/venv.html].
+Para maiores informações sobre como criar, acesse esse [link](https://docs.python.org/pt-br/3/tutorial/venv.html).
 
 _Ps: Ative o ambiente virtual antes de executar os próximos passos._
 
