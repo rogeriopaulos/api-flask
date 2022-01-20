@@ -51,7 +51,19 @@ flask run
 
 ### Instalando com Docker (ambiente de produção)
 
-(...)
+Para rodar a aplicação, no modo de produção, utilizando docker containers, é necessário a prévia instalação do docker e docker-compose. Uma vez instalados, execute os seguintes passos (na raiz do projeto):
+
+
+```
+docker-compose build  # build da imagem do flask service
+```
+
+
+```
+docker-compose up -d
+```
+
+Pronto, a aplicação ficará acessível no endereço _http://<localhost/ip_publico>_.
 
 
 ## Documentação
