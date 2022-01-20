@@ -1,5 +1,7 @@
 from flask import abort, jsonify, request
 
+from utils import count_vowels
+
 
 def configure(app):
 
@@ -23,5 +25,6 @@ def configure(app):
             abort(400, description='The data must be a list of strings.')
 
         # process data
+        response_data = {item: count_vowels(item) for item in data}
 
-        return jsonify(data)
+        return jsonify(response_data)
