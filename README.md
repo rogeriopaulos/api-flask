@@ -55,7 +55,8 @@ flask run
 
 
 ## Documentação
-(...)
+
+Uma vez que a aplicação esteja rodando, a documentação da API pode ser acessada na rota **/apidocs** pelo navegador. A aplicação utiliza o Swagger como framework de documentação.
 
 ## Testes
 

@@ -5,9 +5,9 @@ vowel_count_specs = {
     "parameters": [
         {
             "name": "data",
+            "description": "Recebe um array (lista) de strings",
             "in": "body",
             "required": True,
-            "type": "object",
             "schema": {
                 "type": "array",
                 "items": {
@@ -18,13 +18,18 @@ vowel_count_specs = {
     ],
     "responses": {
         "200": {
-            "description": "Uma lista de strings (palavras)",
+            "description": "Retorna a contagem de vogais de cada string recebida",
             "schema": {
                 "type": "object",
-                "items": {
-                    "type": "object"
+                "properties": {
+                    "string": {
+                        "type": "integer"
+                    }
                 }
             }
+        },
+        "400": {
+            "description": "Bad Request: Os dados informados devem ser uma lista de strings.",
         }
     }
 }
