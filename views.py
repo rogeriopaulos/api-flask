@@ -1,5 +1,7 @@
+from flasgger import swag_from
 from flask import abort, jsonify, request
 
+from docs.swagger_specs import vowel_count_specs
 from utils import count_vowels
 
 
@@ -10,14 +12,18 @@ def configure(app):
         return jsonify(error=str(e)), 400
 
     @app.route("/vowel_count", methods=['POST'])
+    @swag_from(vowel_count_specs)
     def vowel_count():
-        json = request.json
+        """Retorna a contagem de vogais de cada palavra a partir de uma lista de string
+        """
+        # json = request.json
+        data = request.json
 
-        # validate
-        try:
-            data = json['data']
-        except KeyError:
-            abort(400, description="Invalid JSON key. Please, use 'data'.")
+        # # validate
+        # try:
+        #     data = json['data']
+        # except KeyError:
+        #     abort(400, description="Invalid JSON key. Please, use 'data'.")
 
         is_list = isinstance(data, list)
         is_list_of_strings = all(isinstance(el, str) for el in data) if is_list else False

@@ -16,13 +16,13 @@ def test_vowel_count_non_valid_post_data_wrong_format():
             json={'dataset': ['banana', 'apple', 'orange']}
         )
         assert resp.status_code == 400
-        assert resp.json.get('error') == "400 Bad Request: Invalid JSON key. Please, use 'data'."
+        assert resp.json.get('error') == "400 Bad Request: The data must be a list of strings."
 
 
 def test_vowel_count_non_valid_post_data_non_list():
     app = create_app()
     with app.test_client() as client:
-        resp = client.post('/vowel_count', json={'data': 36})
+        resp = client.post('/vowel_count', json=36)
         assert resp.status_code == 400
         assert resp.json.get('error') == "400 Bad Request: The data must be a list of strings."
 
@@ -32,7 +32,7 @@ def test_vowel_count_non_valid_post_data_list():
     with app.test_client() as client:
         resp = client.post(
             '/vowel_count',
-            json={'data': ['grape', 1, 2.34]}
+            json=['grape', 1, 2.34]
         )
         assert resp.status_code == 400
         assert resp.json.get('error') == "400 Bad Request: The data must be a list of strings."
@@ -43,7 +43,7 @@ def test_vowel_count_valid():
     with app.test_client() as client:
         resp = client.post(
             '/vowel_count',
-            json={'data': ['banana', 'apple', 'orange']}
+            json=['banana', 'apple', 'orange']
         )
         json_data = resp.get_json()
         expected_response_data = {'banana': 3, 'apple': 2, 'orange': 3}
