@@ -81,3 +81,7 @@ pytest test_views.py -v
 ## Demo
 
 Você pode conferir uma demo da aplicação nesse [link](https://vowelcount-apiv1.herokuapp.com/apidocs).
+
+## Deploy
+
+Todos os *pushs* e *pull requests* realizados na branch **main** irão disparar o *actions* (github) e, seguindo a pipeline definida, concluirá com o deploy da aplicação no heroku, acessível no link informado acima.
