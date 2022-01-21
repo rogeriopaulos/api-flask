@@ -12,6 +12,7 @@ template = {
   },
   "schemes": [
     "http",
+    "https",
   ],
 }
 
